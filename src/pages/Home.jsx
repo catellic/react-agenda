@@ -4,11 +4,11 @@ import TaskColumn from '../components/TaskColumn.jsx'
 function Home() {
 
   return (
-    <div className="home flex flex-col items-between min-h-screen min-w-screen">
+    <div className="home flex flex-col items-between min-h-screen min-w-screen bg-gray-800">
       <header className="header text-3xl font-bold bg-blue-500 text-white mb-8 p-6 text-center">
-        <h1>The Great Agenda of New Street</h1>
+        <h1>The Great Agenda</h1>
       </header>
-      <main className="columns flex flex-col md:flex-row gap-8 justify-center items-start">
+      <main className="columns flex flex-col md:flex-row gap-8 justify-center items-start ">
         <TaskColumn column='todo' className='flex-1'/>
         <TaskColumn column='doing' className='flex-1'/>
         <TaskColumn column='done' className='flex-1'/>
