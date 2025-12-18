@@ -15,19 +15,19 @@ function TaskColumn({ column }) {
 
     return (
 
-        <section className={`task-column ${column} ${column === 'doing' ? 'flex-vertical m-4 p-2 bg-blue-400 rounded' : 'flex-vertical m-4 p-2 bg-blue-200 rounded'}`}>
-            <h2 className='font-bold rounded'>{column.toUpperCase()}</h2>
+        <section className={`task-column flex-vertical flex-1  max-w-sm rounded p-8 text-center ${column} ${column === 'doing' ? ' bg-blue-400 ' : 'bg-blue-200'}`}>
+            <h2 className='font-bold rounded p-2 m-2'>{column.toUpperCase()}</h2>
             {
                 filteredTasks.map(task => (
 
-                    <div key={task.id} className={`task-card bg-blue-100 border border-gray-500 rounded flex m-4 p-2 justify-between items-center hover:shadow-xl hover:scale-110 transition-all duration-300`}>
+                    <div key={task.id} className={`task-card w-full bg-blue-100 rounded flex m-2 p-2 justify-between items-center hover:shadow-xl hover:scale-105 transition-all duration-300`}>
                         <section className={task.priority === 'high'
-                            ? `high-priority-task font-medium p-2 rounded-lg shadow-md border bg-red-300`
-                            : `low-priority-task p-2 rounded-lg shadow-md border bg-green-200`}>
+                            ? `font-medium p-2 rounded-lg shadow-md border bg-red-300`
+                            : `p-2 rounded-lg shadow-md border bg-green-200`}>
 
                             {task.priority}
                         </section>
-                        <div className='task-text'>
+                        <div className='task-text m-1 p-1 overflow-x-auto whitespace-wrap'>
                             {task.text}
                         </div>
                         <select value={task.status} onChange={e => moveTask(task.id, e.target.value)} className='rounded p-1'>
@@ -44,13 +44,13 @@ function TaskColumn({ column }) {
                 addTask(inputText, inputPriority, column)
                 setInputText('')
                 setInputPriority('low')
-            }} className='flex gap-2 items-center mt-2'>
+            }} className='flex gap-2 items-center items-center m-2'>
                 <input value={inputText} onChange={e => setInputText(e.target.value)} placeholder="Note's text..." className="p-2 rounded flex-1 text-center bg-gray-100" />
                 <select value={inputPriority} onChange={e => setInputPriority(e.target.value)} className='p-2 rounded'>
                     <option value='low'>Low</option>
                     <option value="high">High</option>
                 </select>
-                <button className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Add note</button>
+                <button className="bg-blue-500 font-medium text-white p-2 rounded hover:bg-white hover:text-blue-500 hover:shadow-xl hover:scale-130 transition-all duration-300">+</button>
             </form>
         </section>
     )
