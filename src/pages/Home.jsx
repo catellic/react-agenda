@@ -4,7 +4,7 @@ import TaskColumn from '../components/TaskColumn.jsx'
 function Home() {
 
   return (
-    <div className="home flex flex-col min-h-screen">
+    <div className="home flex flex-col items-between min-h-screen">
       <header className="header p-4 text-center">
         <h1>My great agenda!</h1>
       </header>
