@@ -27,7 +27,7 @@ function TaskColumn({ column }) {
 
                             {task.priority}
                         </section>
-                        <div className='task-text m-1 p-1 overflow-x-auto whitespace-wrap'>
+                        <div className='task-text m-1 p-1 overflow-x-auto  break-words'>
                             {task.text}
                         </div>
                         <select value={task.status} onChange={e => moveTask(task.id, e.target.value)} className='rounded p-1'>
